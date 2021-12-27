@@ -1,0 +1,66 @@
+\documentclass{csuthesis}
+
+% 设置并排放置多图
+\usepackage{subfigure}
+\studentid{12334545456} % 学号
+\clcnumber{} 				% 中图分类号 Chinese Library Classification
+\schoolcode{10554}			% 学校代码
+\secret{绝密}
+
+\titlecn{论文标题}% 论文标题
+\titleen{One Two Three Four Five Six Seven Eight Nine Ten} %论文英文标题
+\author{姓名}% 作者姓名
+\priormajor{电子信息} % 学科专业
+\supervisor{xxxx教授}% 指导教师
+\department{计算机学院} % 学院
+
+%\academiccategory{学术学位}	 % 学术类别
+% \academiccategorytrue      % 学术学位，如果是，注释下面一行
+\academiccategoryfalse    % 专业学位，如果是，注释上面一行
+%\blindreviewtrue
+\blindreviewfalse
+
+% 添加参考文献
+% 所有cite格式引用数据放在references.bib文件中
+\addbibresource{references.bib}
+
+\begin{document}
+    \frontfrontmatter
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 封面
+	% -----------------------------------------------%
+% 	\makecoverpage
+	
+	\ifblindreview	% 盲审不需要扉页和声明页
+	\else
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 扉页 
+	% -----------------------------------------------%
+	\maketitlepage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 声明页
+	% -----------------------------------------------%
+	\announcement
+	\fi
+
+    \cleardoublepage % 重要，必须有这条命令
+    \frontmatter
+    \input{chapter/abstract.tex}
+    \tableofcontents
+    \clearpage
+    \mainmatter
+	\renewcommand{\chaptermark}[1]{\markboth{\thechapter \hspace{0.8em}#1}{}}  % 必须的命令% 必须的命令
+    \input{chapter/chap01.tex}
+    \input{chapter/chap02.tex}
+    \input{chapter/chap03.tex}
+    \input{chapter/chap04.tex}
+    % 参考文献
+    \printbibliography
+    \input{chapter/apendix.tex}
+    % 攻读学位期间主要研究成果
+    \input{chapter/achivement.tex}
+    % 致谢
+    \input{chapter/thank.tex}
+
+\end{document}
