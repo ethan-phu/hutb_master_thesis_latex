@@ -24,6 +24,9 @@ xelatex -synctex=1 -interaction=nonstopmode main.tex
 
 填写扉页的中图分类号时查阅[中国图书馆分类法](http://www.ztflh.com/)。
 
+## github action 使用方法「强烈推荐」
+
+
 ### 盲审版本
 
 盲审版本需要隐去学生和导师信息。封面和扉页的信息可以通过`main.tex`导言区的设置去掉个人信息，如
